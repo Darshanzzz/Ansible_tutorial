@@ -1,0 +1,14 @@
+---
+
+- name: run task on all hosts
+  hosts: test
+  tasks: 
+    - name: copy file to remove host
+      copy:
+          src: epel-edit.sh
+          dest: $HOME/epel-edit.sh
+          owner: root
+          group: root
+          mode: 0600
+      become: true 
+
